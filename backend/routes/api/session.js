@@ -42,6 +42,21 @@ router.delete(
 
 
 
+// Restore session user
+router.get(
+    '/',
+    restoreUser,
+    (req, res) => {
+      const { user } = req;
+      if (user) {
+        return res.json({
+          user: user.toSafeObject()
+        });
+      } else return res.json({});
+    }
+  );
+
+
 //   gBtmuJKg-ehNb8VaEj6MozgxcPE4Q7eZD7oA
 
 

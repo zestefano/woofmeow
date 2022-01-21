@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: { model: "Users" }
+      // references: { model: "Users" }
     },
     sitterId: {
       type: DataTypes.INTEGER,
-      references: { model: "Sitters" }
+      // references: { model: "Sitters" }
     }
   }, {});
   Review.associate = function(models) {

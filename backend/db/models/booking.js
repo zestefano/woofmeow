@@ -1,6 +1,6 @@
 'use strict';
 
-const { all } = require("sequelize/types/lib/operators");
+// const { all } = require("sequelize/types/lib/operators");
 
 module.exports = (sequelize, DataTypes) => {
   const Booking = sequelize.define('Booking', {
@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     sitterId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: { model: "Sitters" }
+      // references: { model: "Sitters" }
     }
   }, {});
   Booking.associate = function(models) {

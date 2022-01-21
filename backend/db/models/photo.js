@@ -8,13 +8,13 @@ module.exports = (sequelize, DataTypes) => {
     sitterId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: { model: "Sitters" }
+      // references: { model: "Sitters" }
     }
   }, {});
   Photo.associate = function(models) {
     // associations can be defined here
     Photo.belongsTo(models.Sitter, {
-      foreignKey: "sittedId"
+      foreignKey: "sitterId"
     })
   };
   return Photo;

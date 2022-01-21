@@ -9,6 +9,7 @@ module.exports = {
         exotic: true,
         about: "I love animals!!!",
         zipcode: 33143,
+        price: 25,
         userId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -19,6 +20,7 @@ module.exports = {
         exotic: true,
         about: "I love animals too!! especially doges!",
         zipcode: 33542,
+        price: 27,
         userId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -29,6 +31,7 @@ module.exports = {
         exotic: true,
         about: "I love animals too!! especially lizzards!",
         zipcode: 38462,
+        price: 30,
         userId: 3,
         createdAt: new Date(),
         updatedAt: new Date()

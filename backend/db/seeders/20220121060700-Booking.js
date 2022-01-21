@@ -10,7 +10,7 @@ module.exports = {
         instructions: "walk the doge please",
         startDate: "2022-02-14",
         endDate: "2022-02-21",
-        sitterId: 7,
+        sitterId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -21,7 +21,7 @@ module.exports = {
         instructions: "doge eats veggies",
         startDate: "2022-03-02",
         endDate: "2022-03-10",
-        sitterId: 8,
+        sitterId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -32,7 +32,7 @@ module.exports = {
         instructions: "cat is cray cray",
         startDate: "2022-02-20",
         endDate: "2022-02-25",
-        sitterId: 9,
+        sitterId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -43,7 +43,7 @@ module.exports = {
         instructions: "walk the cat please",
         startDate: "2022-02-15",
         endDate: "2022-02-23",
-        sitterId: 7,
+        sitterId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       }

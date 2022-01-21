@@ -7,7 +7,7 @@ module.exports = {
         review: "they did a great job!!!",
         rating: 5,
         userId: 2,
-        sitterId: 7,
+        sitterId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -15,7 +15,7 @@ module.exports = {
         review: "fed pebbles too much",
         rating: 3,
         userId: 1,
-        sitterId: 8,
+        sitterId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -23,7 +23,7 @@ module.exports = {
         review: "louie loved the care!",
         rating: 4,
         userId: 3,
-        sitterId: 7,
+        sitterId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       }

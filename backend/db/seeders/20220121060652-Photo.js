@@ -5,19 +5,19 @@ module.exports = {
     return queryInterface.bulkInsert('Photos', [
       {
         url: "https://res.cloudinary.com/zaf/image/upload/v1638986168/samples/people/kitchen-bar.jpg",
-        sitterId: 7,
+        sitterId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         url: "https://res.cloudinary.com/zaf/image/upload/v1638986170/samples/people/smiling-man.jpg",
-        sitterId: 8,
+        sitterId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         url: "https://res.cloudinary.com/zaf/image/upload/v1638986171/samples/people/boy-snow-hoodie.jpg",
-        sitterId: 9,
+        sitterId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       }

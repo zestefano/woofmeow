@@ -3,7 +3,9 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
+import BecomeSitterModal from '../AddSitterModal';
 import './Navigation.css';
+import BecomeSitter from '../AddSitterModal/addSitter';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -27,6 +29,9 @@ function Navigation({ isLoaded }){
       <li>
         <NavLink exact to="/">Home</NavLink>
         {isLoaded && sessionLinks}
+      </li>
+      <li>
+          <BecomeSitterModal />
       </li>
     </ul>
   );

@@ -17,6 +17,7 @@ const SitterPage = () => {
     return (
         <div>
             <h2>{sitter?.User?.username}</h2>
+            <img src={sitter?.Photo?.url}/>
         </div>
     )
 }

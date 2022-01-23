@@ -1,16 +1,21 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { addSitter } from "../../store/sitterReducer";
-// import { useParams } from "react-router-dom";
-// import { addPhoto } from "../../store/sitterReducer";
+import { useParams } from "react-router-dom";
+import { addPhoto } from "../../store/sitterReducer";
+import { useHistory } from "react-router-dom";
 
 
 const BecomeSitter = ({showModal}) => {
     const dispatch = useDispatch()
-    const userId = useSelector((state) => state.session.user.id)
-    // const sitterId = useSelector((state) => state.session)
+    const userId = useSelector((state) => state.session.user?.id)
+    const sitter = useSelector((state) => Object.entries(state.sitters))
     // const {sitterId} = useParams()
-    // console.log(sitterId, 'LLLLLLLLLLLLLL')
+    // console.log(sitter.length - 1, 'LLLLLLLLLLLLLL')
+    const sitterId = sitter.length + 1
+    const history = useHistory()
+    
+    // const sitter = useSelector(state => state?.sitters[sitters.length])
 
     const [dog, setDog] = useState(false)
     const [cat, setCat] = useState(false)
@@ -18,10 +23,23 @@ const BecomeSitter = ({showModal}) => {
     const [about, setAbout] = useState('')
     const [zipcode, setZipcode] = useState('')
     const [price, setPrice] = useState('')
-    // const [url, setUrl] = useState('')
+    const [url, setUrl] = useState('')
+    const [errors, setErrors] = useState([])
 
     const onSubmit = async(e) => {
         e.preventDefault()
+
+        const validationErrors = []
+        const regex = /^[0-9]+(\.[0-9][0-9])?$/;
+        const zipRegex = /^[0-9]{5}(?:-[0-9]{4})?$/
+        const imgRegex = /(http(s?):)|([/|.|\w|\s])*\.(?:jpg|gif|png)/;
+        if (!regex.test(price)) validationErrors.push('Please enter a numeric dollar amount')
+        if (about.length < 5) validationErrors.push('Please tell us about yourself')
+        if (!imgRegex.test(url)) validationErrors.push('Please enter a valid image URL for your profile')
+        if (!zipRegex.test(zipcode)) validationErrors.push('Please enter a valid zipcode')
+        setErrors(validationErrors)
+
+        if(validationErrors.length === 0) {
         const sitter = {
             dog,
             cat,
@@ -31,13 +49,15 @@ const BecomeSitter = ({showModal}) => {
             price,
             userId
         }
-        // const photo = {
-        //     url,
-        //     sitterId
-        // }
+        const photo = {
+            url,
+            sitterId
+        }
         await dispatch(addSitter(sitter))
-        // await dispatch(addPhoto(photo))
+        await dispatch(addPhoto(photo))
         showModal(false)
+        history.push(`${sitterId}`)
+       }
     }
 
     const toggleDog = () => {
@@ -52,6 +72,13 @@ const BecomeSitter = ({showModal}) => {
 
     return (
         <div>
+            <ul className="add-sitter-errors">
+                {errors.length > 0 &&
+                    errors.map(error => (
+                        <li key={error}>{error}</li>
+                    ))
+                }
+            </ul>
             <form onSubmit={onSubmit}>
                 <label>
                     Do you take care of dogs?
@@ -98,14 +125,16 @@ const BecomeSitter = ({showModal}) => {
                 onChange={e => setPrice(e.target.value)}
                 value={price}
                 /> 
-                {/* <label>
+                <label>
                     Photo.url
                 </label>
                 <input
                 onChange={e => setUrl(e.target.value)}
                 value={url}
-                /> */}
-                <button>
+                />
+                <button
+                disabled={(about && zipcode && price && url) ? false : true}
+                >
                     Submit    
                 </button>                            
             </form>

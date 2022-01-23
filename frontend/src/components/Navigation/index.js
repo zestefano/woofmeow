@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import BecomeSitterModal from '../AddSitterModal';
@@ -32,6 +33,9 @@ function Navigation({ isLoaded }){
       </li>
       <li>
           <BecomeSitterModal />
+      </li>
+      <li>
+          <Link to="/sitters">Sitters</Link>
       </li>
     </ul>
   );

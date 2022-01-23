@@ -3,6 +3,8 @@ import { csrfFetch } from "./csrf";
 
 const LOAD_SITTERS = 'sitters/getSitters'
 const ADD_SITTER = 'sitters/addSitter'
+const SINGLE_SITTER = 'sitters/singleSitter'
+// const ADD_PHOTO = 'sitters/addPhoto'
 
 
 const loadAllSitters = (sitters) => {
@@ -39,6 +41,40 @@ export const addSitter = (sitter) => async(dispatch) => {
     }
 }
 
+const getSingleSitter = (sitter) => {
+    return {
+        type: SINGLE_SITTER,
+        sitter
+    }
+}
+
+export const singleSitter = (id) => async(dispatch) => {
+    const response = await csrfFetch(`/api/sitters/${id}`)
+    if(response.ok) {
+        const sitter = await response.json()
+        dispatch(getSingleSitter(sitter))
+    }
+}
+
+// const addAphoto = (photo) => {
+//     return {
+//         type: ADD_PHOTO,
+//         photo
+//     }
+// }
+
+// export const addPhoto = (photo) => async(dispatch) => {
+//     const response = await csrfFetch('/api/sitters/photo', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify(photo)
+//     })
+//     if(response.ok) {
+//         const photo = await response.json()
+//         dispatch(addAphoto(photo))
+//     }
+// }
+
 
 
 
@@ -53,8 +89,16 @@ const sitterReducer = (state = initialState, action) => {
             return newState
         case ADD_SITTER:
             newState = {...state}
-                newState[action.sitter.newSitter.id] = action.sitter.newSitter
+            newState[action.sitter.newSitter.id] = action.sitter.newSitter
             return newState
+        case SINGLE_SITTER:
+            newState = {...state}
+            newState[action.sitter.id] = action.sitter
+            return newState
+        // case ADD_PHOTO:
+        //     newState = {...state}
+        //     newState[action.photo.newPhoto.id] = action.photo.newPhoto
+        //     return newState
         default:
             return state
     }

@@ -1,11 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { addSitter } from "../../store/sitterReducer";
+// import { useParams } from "react-router-dom";
+// import { addPhoto } from "../../store/sitterReducer";
 
 
 const BecomeSitter = ({showModal}) => {
     const dispatch = useDispatch()
     const userId = useSelector((state) => state.session.user.id)
+    // const sitterId = useSelector((state) => state.session)
+    // const {sitterId} = useParams()
+    // console.log(sitterId, 'LLLLLLLLLLLLLL')
 
     const [dog, setDog] = useState(false)
     const [cat, setCat] = useState(false)
@@ -13,6 +18,7 @@ const BecomeSitter = ({showModal}) => {
     const [about, setAbout] = useState('')
     const [zipcode, setZipcode] = useState('')
     const [price, setPrice] = useState('')
+    // const [url, setUrl] = useState('')
 
     const onSubmit = async(e) => {
         e.preventDefault()
@@ -25,7 +31,12 @@ const BecomeSitter = ({showModal}) => {
             price,
             userId
         }
+        // const photo = {
+        //     url,
+        //     sitterId
+        // }
         await dispatch(addSitter(sitter))
+        // await dispatch(addPhoto(photo))
         showModal(false)
     }
 
@@ -87,6 +98,13 @@ const BecomeSitter = ({showModal}) => {
                 onChange={e => setPrice(e.target.value)}
                 value={price}
                 /> 
+                {/* <label>
+                    Photo.url
+                </label>
+                <input
+                onChange={e => setUrl(e.target.value)}
+                value={url}
+                /> */}
                 <button>
                     Submit    
                 </button>                            

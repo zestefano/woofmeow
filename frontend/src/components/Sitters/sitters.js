@@ -7,9 +7,9 @@ import '../../components/Sitters/sitters.css'
 
 const Sitters = () => {
     const dispatch = useDispatch()
-    // const sessionUser = useSelector(state => state.session.user)
+    // const sessionUser = useSelector(state => state.session)
     const allSitters = useSelector((state)=> Object.values(state?.sitters))
-    console.log(allSitters, "-----------------") 
+    // console.log(sessionUser, "-----------------") 
 
     useEffect(() => {
         dispatch(loadSitters())
@@ -17,9 +17,9 @@ const Sitters = () => {
 
     return (
         <div className="sittersContainer">
-            {allSitters?.map(({dog, cat, exotic, about, zipcode, userId, User, Photo}) => (
+            {allSitters?.map(({id, dog, cat, exotic, about, zipcode, userId, User, Photo}) => (
                 <div className="sitter">
-                  <p>{User?.username}</p>
+                  <Link to={`/${id}`}>{User?.username}</Link>
                   {/* <img className="sittersPic" src={Photo.url} /> */}
                 </div>
             ))}

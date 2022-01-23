@@ -6,15 +6,23 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import BecomeSitterModal from '../AddSitterModal';
 import './Navigation.css';
-import BecomeSitter from '../AddSitterModal/addSitter';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
+  const sitterIds = useSelector(state => Object.values(state.sitters))
+//   console.log(sitterIds?.find(userId => sitterIds[userId] === sessionUser?.id))
+  const userSitters = sitterIds.map(a => a.userId)
+// console.log(useSelector(state => state.sitters))
 
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
+    <div>
       <ProfileButton user={sessionUser} />
+      {!userSitters.includes(sessionUser?.id) && (
+        <BecomeSitterModal />
+    )}
+    </div>
     );
   } else {
     sessionLinks = (
@@ -32,7 +40,8 @@ function Navigation({ isLoaded }){
         {isLoaded && sessionLinks}
       </li>
       <li>
-          <BecomeSitterModal />
+ 
+          
       </li>
       <li>
           <Link to="/sitters">Sitters</Link>

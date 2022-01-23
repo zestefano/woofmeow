@@ -44,15 +44,15 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     return res.json(sitter)
 }))
 
-// router.post('/photo', 
-// asyncHandler(async(req,res) => {
-//     const {url, sitterId} = req.body
-//     const newPhoto = {
-//         url, sitterId
-//     }
-//     const photo = await Photo.create(newPhoto)
-//     res.json(photo)
-// }))
+router.post('/photo', 
+asyncHandler(async(req,res) => {
+    const {url, sitterId} = req.body
+    const newPhoto = {
+        url, sitterId
+    }
+    const photo = await Photo.create(newPhoto)
+    res.json(photo)
+}))
 
 
 module.exports = router

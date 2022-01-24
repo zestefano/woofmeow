@@ -17,10 +17,10 @@ const Sitters = () => {
 
     return (
         <div className="sittersContainer">
-            {allSitters?.map(({id, dog, cat, exotic, about, zipcode, userId, User, Photo}) => (
+            {allSitters?.map(({id, dog, cat, exotic, about, zipcode, userId, url, User, Photo}) => (
                 <div className="sitter">
                   <Link to={`/${id}`}>{User?.username}</Link>
-                  {/* <img className="sittersPic" src={Photo.url} /> */}
+                  <img className="sittersPic" src={url} />
                 </div>
             ))}
         </div>

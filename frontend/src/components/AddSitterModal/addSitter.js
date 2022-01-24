@@ -16,6 +16,7 @@ const BecomeSitter = ({showModal}) => {
     const history = useHistory()
     // const allSitters = useSelector((state)=> Object.values(state?.sitters))
     // const sitterId = allSitters[allSitters.length]?.id
+    // console.log(sitterId, "------------")
     
     // const sitter = useSelector(state => state?.sitters[sitters.length])
 
@@ -60,7 +61,10 @@ const BecomeSitter = ({showModal}) => {
         await dispatch(addSitter(sitter))
         // await dispatch(addPhoto(photo))
         showModal(false)
-        // history.push(`${sitterId}`)
+        // setTimeout(() => {
+        //     history.push(`/${sitterId}`)
+        // }, 100)
+        
        }
     }
 

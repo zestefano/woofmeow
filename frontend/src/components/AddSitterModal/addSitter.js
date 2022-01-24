@@ -12,8 +12,10 @@ const BecomeSitter = ({showModal}) => {
     const sitter = useSelector((state) => Object.entries(state.sitters))
     // const {sitterId} = useParams()
     // console.log(sitter.length - 1, 'LLLLLLLLLLLLLL')
-    const sitterId = sitter.length + 1
+    // const sitterId = sitter.length + 1
     const history = useHistory()
+    // const allSitters = useSelector((state)=> Object.values(state?.sitters))
+    // const sitterId = allSitters[allSitters.length]?.id
     
     // const sitter = useSelector(state => state?.sitters[sitters.length])
 
@@ -37,6 +39,7 @@ const BecomeSitter = ({showModal}) => {
         if (about.length < 5) validationErrors.push('Please tell us about yourself')
         if (!imgRegex.test(url)) validationErrors.push('Please enter a valid image URL for your profile')
         if (!zipRegex.test(zipcode)) validationErrors.push('Please enter a valid zipcode')
+        
         setErrors(validationErrors)
 
         if(validationErrors.length === 0) {
@@ -57,7 +60,7 @@ const BecomeSitter = ({showModal}) => {
         await dispatch(addSitter(sitter))
         // await dispatch(addPhoto(photo))
         showModal(false)
-        history.push(`${sitterId}`)
+        // history.push(`${sitterId}`)
        }
     }
 

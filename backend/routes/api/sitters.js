@@ -83,6 +83,16 @@ router.put('/:id(\\d+)',
     return res.json({sitter})
 }))
 
+// DELETE SITTER
+router.delete('/:id(\\d+)', 
+ async(req, res) => {
+   const sitter = await Sitter.findByPk(req.params.id, {
+       include: User
+   }) 
+   await sitter.destroy()
+   return res.json(sitter)
+})
+
 // EDIT SITTER PHOTO
 // router.put('/photo/:id(\\d+)',
 //  asyncHandler(async(req, res) => {

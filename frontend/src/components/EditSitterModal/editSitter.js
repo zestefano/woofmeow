@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { editSitter } from "../../store/sitterReducer";
 // import { editSitterPhoto } from "../../store/sitterReducer";
+import DeleteSitterButton from "../DeleteSitterButton";
 
 const EditSitterButton = ({id, showModal, editDog, editCat, editExotic, editAbout, editZipcode, editPrice, editUrl}) => {
     const dispatch = useDispatch()
@@ -111,6 +112,7 @@ const EditSitterButton = ({id, showModal, editDog, editCat, editExotic, editAbou
                 </button>       
 
             </form>
+            <DeleteSitterButton id={id}/>
         </div>
     )
 }

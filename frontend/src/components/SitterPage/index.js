@@ -11,7 +11,8 @@ const SitterPage = () => {
     const {sitterId} = useParams()
     const sitter = useSelector(state => state?.sitters[sitterId])
     const userId = useSelector((state) => state.session.user?.id)
-    console.log(userId)
+    // const allSitters = useSelector((state)=> Object.values(state?.sitters))
+    // console.log(allSitters[allSitters.length - 1].id, "---------------")
     // console.log(useSelector(state => state?.sitters[sitterId]), "wwwwwwwwww")
 
 

@@ -7,6 +7,7 @@ const SINGLE_SITTER = 'sitters/singleSitter'
 // const SITTER_PHOTO = 'sitters/sitterPhoto'
 // const ADD_PHOTO = 'sitters/addPhoto'
 const EDIT_SITTER = 'sitters/editSitter'
+const DELETE_SITTER = 'sitters/deleteSitter'
 // const EDIT_SITTER_PHOTO = 'sitters/editSitterPhoto'
 
 // LOAD ALL SITTERS
@@ -117,6 +118,23 @@ export const editSitter = (sitter, id) => async(dispatch) => {
     }
 }
 
+// DELETE SITTER
+const deleteASitter = (sitter) => {
+    return {
+        type: DELETE_SITTER,
+        sitter
+    }
+}
+
+export const deleteSitter = (id) => async(dispatch) => {
+    const response = await csrfFetch(`/api/sitters/${id}`, {
+        method: 'DELETE'
+    })
+    if(response.ok) {
+        dispatch(deleteASitter(id))
+    }
+}
+
 // EDIT SITTER PHOTO
 
 // const editASitterPhoto = (photo) => {
@@ -169,6 +187,10 @@ const sitterReducer = (state = initialState, action) => {
             newState = {...state}
             console.log(newState[action.sitter.sitter.id], "+++++++++++++++++")
             newState[action.sitter.sitter.id] = action.sitter.sitter
+            return newState
+        case DELETE_SITTER:
+            newState = {...state}
+            delete newState[action.sitter]
             return newState
         // case EDIT_SITTER_PHOTO:
         //     newState = {...state}

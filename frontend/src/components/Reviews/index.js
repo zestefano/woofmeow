@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+// import AddReview from "./addReview";
+import AddReviewButton from "./addReviewButton";
 
 
 import { getReviews } from "../../store/reviewReducer";
+import AddReview from "./addReview";
 
 const Reviews = ({userId, sitterId}) => {
     const dispatch = useDispatch()
@@ -17,6 +20,12 @@ const Reviews = ({userId, sitterId}) => {
 
     return (
         <div>
+            {sessionUser && (
+                <div>
+                    <AddReviewButton userId={userId} sitterId={sitterId}/>
+                </div>
+            )}
+         
             {reviews?.map(({review, Sitter, User, id, rating}) => (
                 <div>
                     {User.username}

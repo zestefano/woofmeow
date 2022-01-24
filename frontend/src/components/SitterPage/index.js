@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { singleSitter } from "../../store/sitterReducer";
 // import { sitterPhoto } from "../../store/sitterReducer";
 import EditSitterModal from "../EditSitterModal";
-
+import Reviews from "../Reviews";
 
 const SitterPage = () => {
     const dispatch = useDispatch()
@@ -32,6 +32,9 @@ const SitterPage = () => {
                     <EditSitterModal id={sitterId} editDog={sitter?.dog} editCat={sitter?.cat} editExotic={sitter?.exotic} editAbout={sitter?.about} editZipcode={sitter?.zipcode} editPrice={sitter?.price} editUrl={sitter?.url}/>
                 )}
                 
+            </div>
+            <div>
+                <Reviews sitterId={sitterId} userId={sitter?.User?.id}/>
             </div>
         </div>
     )

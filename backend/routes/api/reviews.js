@@ -46,6 +46,7 @@ reviewValidator, asyncHandler(async(req, res) => {
     }
 }))
 
+// EDIT REVIEW
 router.put('/:id(\\d+)',
 asyncHandler(async(req, res) => {
     const review = await Review.findByPk(req.params.id, {
@@ -58,6 +59,16 @@ asyncHandler(async(req, res) => {
     await review.save()
     return res.json({review})
 }))
+
+// DELETE REVIEW
+router.delete('/:id(\\d+)',
+async(req, res) => {
+    const review = await Review.findByPk(req.params.id, {
+        include: User
+    })
+    await review.destroy()
+    return res.json(review)
+})
 
 
 

@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 
 const GET_REVIEWS = 'reviews/getReviews'
 const ADD_REVIEW = 'reviews/addReview'
+const EDIT_REVIEW = 'reviews/editReview'
 
 const getAllReviews = (review) => {
     return {
@@ -36,6 +37,25 @@ export const addReview = (review) => async(dispatch) => {
     }
 }
 
+const editAReview = (review) => {
+    return {
+        type: EDIT_REVIEW,
+        review
+    }
+}
+
+export const editReview = (review, id) => async(dispatch) => {
+    const response = await csrfFetch(`/api/reviews/${id}`, {
+        method: 'PUT',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(review)
+    }) 
+    if(response.ok) {
+        const review = await response.json()
+        dispatch(editAReview(review))
+    }
+}
+
 const initialState = {}
 
 const reviewReducer = (state = initialState, action) => {
@@ -48,6 +68,10 @@ const reviewReducer = (state = initialState, action) => {
         case ADD_REVIEW:
             newState = {...state}
             newState[action.review.id] = action.review
+            return newState
+        case EDIT_REVIEW:
+            newState = {...state}
+            newState[action.review.review.id] = action.review.review
             return newState
         default:
             return state

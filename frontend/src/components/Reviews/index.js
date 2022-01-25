@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import AddReview from "./addReview";
 import AddReviewButton from "./addReviewButton";
 import EditReviewButton from "./editReviewButton";
+import DeleteReviewButton from "./deleteReview";
 
 
 import { getReviews } from "../../store/reviewReducer";

@@ -46,6 +46,19 @@ reviewValidator, asyncHandler(async(req, res) => {
     }
 }))
 
+router.put('/:id(\\d+)',
+asyncHandler(async(req, res) => {
+    const review = await Review.findByPk(req.params.id, {
+        include: [Sitter, User]
+    })
+
+    review.review = req.body.review || review.review
+    review.rating = req.body.rating || review.rating
+
+    await review.save()
+    return res.json({review})
+}))
+
 
 
 module.exports = router;

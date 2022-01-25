@@ -9,7 +9,7 @@ const AddReview = ({sitterId, showModal}) => {
     const userId = useSelector(state => state.session.user.id)
 
     const [review, setReview] = useState('')
-    const [rating, setRating] = useState('')
+    const [rating, setRating] = useState('5')
     const [errors, setErrors] = useState([])
 
     const onSubmit = async(e) => {

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import AddReview from "./addReview";
 import AddReviewButton from "./addReviewButton";
+import EditReviewButton from "./editReviewButton";
 
 
 import { getReviews } from "../../store/reviewReducer";
@@ -30,6 +31,9 @@ const Reviews = ({userId, sitterId}) => {
                 <div>
                     {User.username}
                     {review}
+                    {sessionUser?.id === User?.id && (
+                        <EditReviewButton id={id} reviewValue={review} ratingValue={rating} />
+                    )}
                 </div>
             ))}
         </div>

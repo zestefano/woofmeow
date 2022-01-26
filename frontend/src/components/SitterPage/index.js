@@ -25,7 +25,7 @@ const SitterPage = () => {
     return (
         <div>
             <h2>{sitter?.User?.username}</h2>
-            <img crossorigin="anonymous" src={sitter?.url}/>
+            <img src={sitter?.url}/>
             <h3>{sitter?.price}</h3>
             <div>
                 {userId === sitter?.User?.id && (

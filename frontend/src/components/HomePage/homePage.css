@@ -1,0 +1,80 @@
+/* body {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+} */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+/* .section1 {
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+    background: no-repeat center / cover url("https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg");
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding: 1rem;
+    position: sticky;
+    width: 100%;
+    z-index: -1;
+}
+.section2 {
+    height: 100vh;
+    box-sizing: border-box;
+    background: no-repeat center / cover url("https://wallpaperaccess.com/full/390975.jpg");
+    z-index: -2;
+}
+
+.section3 {
+    height: 100vh;
+    box-sizing: border-box;
+    background: no-repeat center / cover url("https://wallpaperaccess.com/full/390975.jpg");
+    z-index: -3;
+} */
+
+.section {
+    align-items: center;
+    background: url('http://www.palermoinsuite.com/wp-content/uploads/2018/07/medical-questions-ask-a-prospective-pet-sitter-fb-80603304.jpg') no-repeat center / cover;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding: 1rem;
+    position: sticky;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .section:nth-child(2) {
+    background-image: url('https://www.akc.org/wp-content/uploads/2017/03/Beagle-laying-down-on-the-couch-with-a-woman.jpeg');
+      z-index: -2;
+  }
+  
+  .section:nth-child(3) {
+    background-image: url('https://www.care.com/c/wp-content/uploads/sites/2/2021/09/GettyImages-1291800623-1-1620x1080.jpg');
+      z-index: -3;
+  }
+
+  .section:last-child {
+    background-image: url('https://abwerrands.com/wp-content/uploads/2017/03/Depositphotos_123547206_l-2015-e1548533247654.jpg');
+    z-index: -4;
+  }
+
+@supports not (-webkit-text-stroke: 1px #000) {
+    .title {
+      text-shadow:
+         3px  3px 0 #000,
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+    }
+  }

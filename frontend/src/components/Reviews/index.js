@@ -27,6 +27,7 @@ const Reviews = ({userId, sitterId}) => {
                     <AddReviewButton userId={userId} sitterId={sitterId}/>
                 </div>
             )}
+            <p>{reviews.length} Reviews</p>
          
             {reviews?.map(({review, Sitter, User, id, rating}) => (
                 <div>

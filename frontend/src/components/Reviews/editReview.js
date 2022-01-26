@@ -44,7 +44,7 @@ const EditReview = ({id, showModal, reviewValue, ratingValue}) => {
                 </select>
                 <button>Submit</button>
             </form>
-            <DeleteReviewButton id={id}/>
+            <DeleteReviewButton id={id} showModal={showModal}/>
 
         </div>
     )

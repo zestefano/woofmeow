@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Sitters from "./components/Sitters/sitters";
 import SitterPage from "./components/SitterPage";
+import HomePage from "./components/HomePage/homePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/:sitterId">
             <SitterPage />
+          </Route>
+          <Route>
+            <HomePage />
           </Route>
         </Switch>
       )}

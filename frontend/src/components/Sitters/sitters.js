@@ -20,7 +20,7 @@ const Sitters = () => {
             {allSitters?.map(({id, dog, cat, exotic, about, zipcode, userId, url, User, Photo}) => (
                 <div className="sitter">
                   <Link to={`/${id}`}>{User?.username}</Link>
-                  <img className="sittersPic" src={url} />
+                  <Link to={`/${id}`}><img crossorigin="anonymous" className="sittersPic" src={url} alt="picture" /></Link>
                 </div>
             ))}
         </div>

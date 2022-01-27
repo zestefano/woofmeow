@@ -26,7 +26,7 @@ const SitterPage = () => {
         <div>
             <h2>{sitter?.User?.username}</h2>
             <img src={sitter?.url}/>
-            <h3>{sitter?.price}</h3>
+            <h3>${sitter?.price} per day</h3>
             <div>
                 {userId === sitter?.User?.id && (
                     <EditSitterModal id={sitterId} editDog={sitter?.dog} editCat={sitter?.cat} editExotic={sitter?.exotic} editAbout={sitter?.about} editZipcode={sitter?.zipcode} editPrice={sitter?.price} editUrl={sitter?.url}/>

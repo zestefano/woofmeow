@@ -12,7 +12,8 @@ function Navigation({ isLoaded }){
   const sitterIds = useSelector(state => Object.values(state.sitters))
 //   console.log(sitterIds?.find(userId => sitterIds[userId] === sessionUser?.id))
   const userSitters = sitterIds.map(a => a.userId)
-// console.log(useSelector(state => state.sitters))
+// console.log(sessionUser)
+// console.log()
 
   let sessionLinks;
   if (sessionUser) {
@@ -34,19 +35,21 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
-        {isLoaded && sessionLinks}
-      </li>
-      <li>
- 
-          
-      </li>
-      <li>
-          <Link to="/sitters">Sitters</Link>
-      </li>
-    </ul>
+    // <div className='nav'>
+      <ul>
+        <li>
+          <NavLink exact to="/">Home</NavLink>
+          {isLoaded && sessionLinks}
+        </li>
+        <li>
+  
+            
+        </li>
+        <li>
+            <Link to="/sitters">Sitters</Link>
+        </li>
+      </ul>
+    // </div>
   );
 }
 

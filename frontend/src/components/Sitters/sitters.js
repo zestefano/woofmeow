@@ -18,9 +18,13 @@ const Sitters = () => {
     return (
         <div className="sittersContainer">
             {allSitters?.map(({id, dog, cat, exotic, about, zipcode, userId, url, User, Photo}) => (
-                <div className="sitter">
-                  <Link to={`/${id}`}>{User?.username}</Link>
-                  <Link to={`/${id}`}><img className="sittersPic" src={url} alt="picture" /></Link>
+                <div>
+                    <div className="sitter">
+                        <Link to={`/${id}`}>{User?.username}</Link>
+                    </div>
+                    <div>
+                        <Link to={`/${id}`}><img className="sittersPic" src={url} alt="picture" /></Link>
+                    </div>
                 </div>
             ))}
         </div>

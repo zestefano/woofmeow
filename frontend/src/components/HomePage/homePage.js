@@ -9,6 +9,12 @@ const HomePage = () => {
         <div>
             <section className="section">
                 <p>Welcome to WOOFMEOW</p>
+                <div className="searchBar">
+                    <input
+                    type='text'
+                    />
+                </div>
+                
             </section>
             <section className="section">
                 

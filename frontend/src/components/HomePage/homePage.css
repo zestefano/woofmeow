@@ -58,6 +58,7 @@ p {
     position: sticky;
     width: 100%;
     z-index: -1;
+    flex-direction: column;
   }
   
   .section:nth-child(2) {
@@ -73,6 +74,10 @@ p {
   .section:last-child {
     background-image: url('https://res.cloudinary.com/zaf/image/upload/v1643263726/woofmeow/4_wfcpmr.jpg');
     z-index: -4;
+  }
+
+  .searchBar {
+      z-index: 5;
   }
 
 @supports not (-webkit-text-stroke: 1px #000) {

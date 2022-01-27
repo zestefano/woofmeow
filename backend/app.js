@@ -16,13 +16,23 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(express.json());
 // app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+app.use(
+  helmet.crossOriginResourcePolicy({ 
+    policy: "cross-origin" 
+  })
+);
 
+app.use(
+  helmet({
+    contentSecurityPolicy: false
+  })
+);
 
 
 // Security Middleware
 if (!isProduction) {
     // enable cors only in development
-    app.use(cors({origin: "https://woofmeow.herokuapp.com/", credentials: true}));
+    app.use(cors());
   }
   // helmet helps set a variety of headers to better secure your app
   app.use(helmet({

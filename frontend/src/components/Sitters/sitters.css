@@ -1,4 +1,4 @@
-.sittersContainer {
+/* .sittersContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,4 +20,46 @@
     color: black;
     font-weight: bolder;
     font-size: 18px;
-}
+} */
+
+/* .sitters {
+    display: flex;
+    flex-wrap: wrap;
+  } */
+
+.sittersContainer {
+    padding: 2%;
+    flex-grow: 1;
+    flex-basis: 16%;
+    align-items: center;
+    justify-content: center;
+  
+    display: flex; /* so child elements can use flexbox stuff too! */
+ }
+
+ .sitterImg img {
+    max-width: 100%;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    padding: 15px;
+    border-radius: 25px;
+  }
+
+  .sitterInfo {
+    margin-top: auto;
+    /* z-index: 1; */
+  }
+
+  .sitters {
+    align-items: center;
+    background: url('https://www.rd.com/wp-content/uploads/2018/08/13-Signs-You-Hired-a-Bad-Pet-Sitter-2.jpg?') no-repeat center / cover;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding: 1rem;
+    position: sticky;
+    width: 100%;
+    /* z-index: -1; */
+  }

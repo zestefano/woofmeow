@@ -16,18 +16,21 @@ const Sitters = () => {
     }, [dispatch])
 
     return (
-        <div className="sittersContainer">
-            {allSitters?.map(({id, dog, cat, exotic, about, zipcode, userId, url, User, Photo}) => (
-                <div>
-                    <div className="sitter">
-                        <Link to={`/${id}`}>{User?.username}</Link>
-                    </div>
-                    <div>
-                        <Link to={`/${id}`}><img className="sittersPic" src={url} alt="picture" /></Link>
-                    </div>
-                </div>
-            ))}
-        </div>
+        <section className="sitters">
+            {/* <h1>Woofers</h1> */}
+            <div className="sittersContainer">
+                {allSitters?.map(({id, dog, cat, exotic, about, zipcode, userId, url, User, Photo}) => (
+                    <article>
+                        <div className="sitterInfo">
+                            <Link to={`/${id}`}>{User?.username}</Link>
+                        </div>
+                        <div className="sitterImg">
+                            <Link to={`/${id}`}><img className="sittersPic" src={url} alt="picture" /></Link>
+                        </div>
+                    </article>
+                ))}
+            </div>
+        </section>
     )
 }
 

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import BecomeSitterModal from '../AddSitterModal';
+import SignupFormModal from '../SignupFormPage/signupModal';
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
@@ -29,7 +30,7 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
         <LoginFormModal />
-        <NavLink to="/signup">Sign Up</NavLink>
+        <SignupFormModal />
       </>
     );
   }

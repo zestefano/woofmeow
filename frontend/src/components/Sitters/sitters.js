@@ -20,7 +20,7 @@ const Sitters = () => {
             <section className="sitters">
                 <h1>Our Woofers are pet lovers just like you. Find a Woofer in your area:</h1>
                 <h1><input className="searchSitters"/></h1>
-                <h1><button className="zip">Search zipcode</button></h1>
+                <h1><button className="zip">Search</button></h1>
                 
                 <div className="sittersContainer">
                     {allSitters?.map(({id, dog, cat, exotic, about, zipcode, userId, url, User, Photo}) => (

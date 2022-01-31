@@ -1,0 +1,26 @@
+div.userReview {
+    box-sizing: border-box;
+    width: 100%;
+    border: black solid 2px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    font-family: 'Jost', sans-serif;
+    overflow: scroll;
+}
+
+.rev {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    /* float: left; */
+}
+
+.edit {
+    margin-left: 10px;
+}
+
+.rating {
+    color: rgb(228, 228, 75);
+}

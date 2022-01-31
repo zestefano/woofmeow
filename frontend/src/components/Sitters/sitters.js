@@ -16,21 +16,29 @@ const Sitters = () => {
     }, [dispatch])
 
     return (
-        <section className="sitters">
-            {/* <h1>Woofers</h1> */}
-            <div className="sittersContainer">
-                {allSitters?.map(({id, dog, cat, exotic, about, zipcode, userId, url, User, Photo}) => (
-                    <article>
-                        <div className="sitterInfo">
-                            <Link to={`/${id}`}>{User?.username}</Link>
-                        </div>
-                        <div className="sitterImg">
-                            <Link to={`/${id}`}><img className="sittersPic" src={url} alt="picture" /></Link>
-                        </div>
-                    </article>
-                ))}
-            </div>
-        </section>
+        <div>
+            <section className="sitters">
+                <h1>Our Woofers are pet lovers just like you. Find a Woofer in your area:</h1>
+                <h1><input className="searchSitters"/></h1>
+                <button className="zip">Search zipcode</button>
+                
+                <div className="sittersContainer">
+                    {allSitters?.map(({id, dog, cat, exotic, about, zipcode, userId, url, User, Photo}) => (
+                        <article>
+                            <div className="sitterInfo">
+                                <Link to={`/${id}`}>{User?.firstName}</Link>
+                            </div>
+                            <div className="sitterImg">
+                                <Link to={`/${id}`}><img className="sittersPic" src={url} alt="picture" /></Link>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </section>
+            <section className="sitters1">
+            
+            </section>
+        </div>
     )
 }
 

@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 import "../HomePage/homePage.css"
 
@@ -8,11 +8,14 @@ const HomePage = () => {
     return (
         <div>
             <section className="section">
-                <p>Welcome to WOOFMEOW</p>
+                <p>Welcome to WoofMeow</p>
+                <p>Find a Pet Sitter near you</p>
                 <div className="searchBar">
                     <input
+                    className="homesearch"
                     type='text'
                     />
+                    <button className="homeSearchButton">Search Zipcode</button>
                 </div>
                 
             </section>
@@ -25,6 +28,7 @@ const HomePage = () => {
             </section>
             <section className="section">
                 <p>Signup for an account today</p>
+                
             </section>
         </div>
     )

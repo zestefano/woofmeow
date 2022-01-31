@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
+import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import '../../components/LoginFormModal/login.css'
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -19,8 +21,13 @@ function LoginForm() {
     );
   };
 
+  const demo = () => {
+    setCredential('Demo-lition')
+    setPassword('password')
+  }
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="login" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => (
           <li key={idx}>{error}</li>
@@ -28,23 +35,28 @@ function LoginForm() {
       </ul>
       <label>
         Username or Email
+        </label>
         <input
           type="text"
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
           required
         />
-      </label>
+      
       <label>
+        
         Password
+        </label>
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      </label>
+     
       <button type="submit">Log In</button>
+      <button className='submit' onClick={demo}>Demo User</button>
+      <Link to='https://github.com/zestefano'>github.com/zestefano</Link>
     </form>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import { Link } from "react-router-dom";
 import './SignupForm.css';
 
 function SignupFormPage() {
@@ -31,65 +32,72 @@ function SignupFormPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="signup" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
       <label>
         Email
+        </label>
         <input
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-      </label>
+     
       <label>
         First Name
+        </label>
         <input
           type="text"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
           required
         />
-      </label>
+      
       <label>
         Last Name
+        </label>
         <input
           type="text"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           required
         />
-      </label>
+     
       <label>
         Username
+        </label>
         <input
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
         />
-      </label>
+      
       <label>
         Password
+        </label>
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      </label>
+     
       <label>
         Confirm Password
+        </label>
         <input
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
-      </label>
+      
       <button type="submit">Sign Up</button>
+      <Link to='https://github.com/zestefano'>github.com/zestefano</Link>
     </form>
   );
 }

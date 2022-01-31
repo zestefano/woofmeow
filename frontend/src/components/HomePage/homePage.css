@@ -13,10 +13,29 @@ p {
 
   }
 
+  .homeSearchButton {
+    font-size: 30px;
+  }
+
+  .homesearch {
+    font-size: 40px;
+    border-radius: 20px;
+  }
+
   p {
     font-family: Allerta Stencil;
     color: aliceblue;
-    font-size: 24px;
+    font-size: 60px;
+    /* opacity: .9; */
+    /* font-family: Allerta Stencil; */
+    /* color: whitesmoke; */
+    /* font-size: 40px; */
+    /* text-decoration: none;*/
+    text-shadow:
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000; 
   }
 
 /* .section1 {
@@ -63,16 +82,22 @@ p {
   
   .section:nth-child(2) {
     background-image: url('https://res.cloudinary.com/zaf/image/upload/v1643263725/woofmeow/2_zhe6iu.jpg');
+    display: flex;
+    justify-content: center;
       z-index: -2;
   }
   
   .section:nth-child(3) {
     background-image: url('https://res.cloudinary.com/zaf/image/upload/v1643263726/woofmeow/3_synvuo.jpg');
+    display: flex;
+    justify-content: center;
       z-index: -3;
   }
 
   .section:last-child {
     background-image: url('https://res.cloudinary.com/zaf/image/upload/v1643263726/woofmeow/4_wfcpmr.jpg');
+    display: flex;
+    justify-content: center;
     z-index: -4;
   }
 
@@ -90,3 +115,4 @@ p {
          1px  1px 0 #000;
     }
   }
+

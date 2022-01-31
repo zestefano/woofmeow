@@ -7,7 +7,7 @@ const BecomeSitterModal = () => {
 
     return (
         <div>
-            <button onClick={() => setModal(true)}>
+            <button className="become" onClick={() => setModal(true)}>
                 Become a sitter
             </button>
             {modal && (

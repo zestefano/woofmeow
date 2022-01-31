@@ -1,4 +1,4 @@
-.signup {
+.editSitter {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -15,6 +15,6 @@
     border-radius: 10px;
   }
 
-  .label {
+  label {
     color: white;
 }

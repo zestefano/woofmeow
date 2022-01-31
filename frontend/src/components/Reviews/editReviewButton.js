@@ -9,7 +9,7 @@ const EditReviewButton = ({id, reviewValue, ratingValue}) => {
             <button
             onClick={() => setModal(true)}
             >
-                edit
+                Edit
             </button>
             {modal && (
                 <Modal onClose={() => setModal(false)}>

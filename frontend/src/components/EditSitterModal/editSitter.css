@@ -18,3 +18,11 @@
   label {
     color: white;
 }
+
+
+
+.deleteSitter {
+    display: flex;
+    flex-direction: column;
+
+  }

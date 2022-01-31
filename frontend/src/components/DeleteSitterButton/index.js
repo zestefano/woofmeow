@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { deleteSitter } from "../../store/sitterReducer";
 import { useHistory } from "react-router-dom";
+import '../../components/EditSitterModal/editSitter.css'
 
 const DeleteSitterButton = ({id}) => {
  const dispatch = useDispatch()
@@ -12,12 +13,12 @@ const DeleteSitterButton = ({id}) => {
  } 
 
  return (
-     <div>
+     <div className="deleteSitter">
          <button
          onClick={() => onSubmit(id)}
          id={id}
          >
-             delete
+             Delete
          </button>
      </div>
  )

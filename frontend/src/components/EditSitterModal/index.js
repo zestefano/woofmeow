@@ -9,7 +9,7 @@ const EditSitterModal = ({id, editDog, editCat, editExotic, editAbout, editZipco
     return (
         <div>
             <button onClick={() => setModal(true)}>
-                edit
+                Edit
             </button>
         
             {modal && (

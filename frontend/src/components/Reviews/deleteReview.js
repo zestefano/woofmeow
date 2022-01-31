@@ -17,7 +17,7 @@ const DeleteReviewButton = ({id, showModal}) => {
             onClick={() => onSubmit(id)}
             id={id}
             >
-                delete
+                Delete
             </button>
         </div>
     )

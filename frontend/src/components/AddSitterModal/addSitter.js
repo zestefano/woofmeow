@@ -81,6 +81,8 @@ const BecomeSitter = ({showModal}) => {
 
     return (
         <div>
+
+            <form className="addSitter" onSubmit={onSubmit}>
             <ul className="add-sitter-errors">
                 {errors.length > 0 &&
                     errors.map(error => (
@@ -88,7 +90,6 @@ const BecomeSitter = ({showModal}) => {
                     ))
                 }
             </ul>
-            <form className="addSitter" onSubmit={onSubmit}>
                 <label>
                     Do you take care of dogs?
                 </label>

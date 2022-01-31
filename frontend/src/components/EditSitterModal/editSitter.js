@@ -133,9 +133,10 @@ const EditSitterButton = ({id, showModal, editDog, editCat, editExotic, editAbou
                 >
                     Submit    
                 </button>       
+                <DeleteSitterButton id={id}/>
 
             </form>
-            <DeleteSitterButton id={id}/>
+            
         </div>
     )
 }

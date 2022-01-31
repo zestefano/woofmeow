@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { editReview } from "../../store/reviewReducer";
 import DeleteReviewButton from "./deleteReview";
+import '../../components/Reviews/editReview.css'
 
 const EditReview = ({id, showModal, reviewValue, ratingValue}) => {
     const dispatch = useDispatch()
@@ -23,10 +24,10 @@ const EditReview = ({id, showModal, reviewValue, ratingValue}) => {
 
     return (
         <div>
-            <form onSubmit={onSubmit}>
-                <h2>
-                    Add Review
-                </h2>
+            <form className="editReview" onSubmit={onSubmit}>
+                <label>
+                    Edit Review
+                </label>
                 <textarea
                 onChange={e => setReview(e.target.value)}
                 value={review}
@@ -42,9 +43,10 @@ const EditReview = ({id, showModal, reviewValue, ratingValue}) => {
                     <option value='4'>★★★★</option>
                     <option value='5'>★★★★★</option>
                 </select>
-                <button>Submit</button>
+                <button disabled={review ? false : true}>Submit</button>
+                <DeleteReviewButton id={id} showModal={showModal}/>
             </form>
-            <DeleteReviewButton id={id} showModal={showModal}/>
+            
 
         </div>
     )

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { editSitter } from "../../store/sitterReducer";
 // import { editSitterPhoto } from "../../store/sitterReducer";
 import DeleteSitterButton from "../DeleteSitterButton";
+import '../../components/EditSitterModal/editSitter.css'
 
 const EditSitterButton = ({id, showModal, editDog, editCat, editExotic, editAbout, editZipcode, editPrice, editUrl}) => {
     const dispatch = useDispatch()
@@ -14,10 +15,23 @@ const EditSitterButton = ({id, showModal, editDog, editCat, editExotic, editAbou
     const [zipcode, setZipcode] = useState(editZipcode)
     const [price, setPrice] = useState(editPrice)
     const [url, setUrl] = useState(editUrl)
+    const [errors, setErrors] = useState([])
     
     const onSubmit = async(e) => {
         e.preventDefault()
 
+        const validationErrors = []
+        const regex = /^[0-9]+(\.[0-9][0-9])?$/;
+        const zipRegex = /^[0-9]{5}(?:-[0-9]{4})?$/
+        const imgRegex = /(http(s?):)|([/|.|\w|\s])*\.(?:jpg|gif|png)/;
+        if (!regex.test(price)) validationErrors.push('Please enter a numeric dollar amount')
+        if (about.length < 5) validationErrors.push('Please tell us about yourself')
+        if (!imgRegex.test(url)) validationErrors.push('Please enter a valid image URL for your profile')
+        if (!zipRegex.test(zipcode)) validationErrors.push('Please enter a valid zipcode')
+
+        setErrors(validationErrors)
+
+        if(validationErrors.length === 0) {
         const sitter = {
             id,
             dog,
@@ -39,6 +53,7 @@ const EditSitterButton = ({id, showModal, editDog, editCat, editExotic, editAbou
         // dispatch(editSitterPhoto(photo, id))
         showModal(false)
     }
+}
 
     const toggleDog = () => {
         setDog(value => !value)
@@ -52,7 +67,15 @@ const EditSitterButton = ({id, showModal, editDog, editCat, editExotic, editAbou
 
     return (
         <div>
-            <form onSubmit={onSubmit}>
+
+            <form className="editSitter" onSubmit={onSubmit}>
+            <ul className="add-sitter-errors">
+                {errors.length > 0 &&
+                    errors.map(error => (
+                        <li key={error}>{error}</li>
+                    ))
+                }
+            </ul>
                 <label>
                     Do you take care of dogs?
                 </label>

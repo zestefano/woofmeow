@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import AddReviewButton from "./addReviewButton";
 import EditReviewButton from "./editReviewButton";
 import DeleteReviewButton from "./deleteReview";
+import '../../components/Reviews/reviews.css'
 
 
 import { getReviews } from "../../store/reviewReducer";
@@ -21,21 +22,25 @@ const Reviews = ({userId, sitterId}) => {
 
 
     return (
-        <div>
+        <div className="userReview">
+            <h3>{reviews.length} Reviews</h3>
             {sessionUser && (
                 <div>
                     <AddReviewButton userId={userId} sitterId={sitterId}/>
                 </div>
             )}
-            <h3>{reviews.length} Reviews</h3>
+            
          
             {reviews?.map(({review, Sitter, User, id, rating}) => (
-                <div>
-                    {User.username}
-                    {review}
+                <div className="rev">
+                    <p className="rating">{rating === 5? "★★★★★" : rating === 4? "★★★★" : rating === 3? "★★★" : rating === 2? "★★" : "★"}</p>
+                    {User.username} : {review}
+                    
+                    <div className="edit">
                     {sessionUser?.id === User?.id && (
                         <EditReviewButton id={id} reviewValue={review} ratingValue={rating} />
                     )}
+                    </div>
                 </div>
             ))}
         </div>

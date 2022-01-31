@@ -1,4 +1,4 @@
-.signup {
+.addReview {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -15,6 +15,6 @@
     border-radius: 10px;
   }
 
-  .label {
-    color: white;
-}
+  label {
+      color: white;
+  }

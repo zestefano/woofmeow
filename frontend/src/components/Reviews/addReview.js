@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
 import { addReview } from "../../store/reviewReducer";
+import '../../components/Reviews/addReview.css'
 
 const AddReview = ({sitterId, showModal}) => {
     const dispatch = useDispatch()
@@ -37,16 +38,17 @@ const AddReview = ({sitterId, showModal}) => {
 
         return (
             <div>
-                <form onSubmit={onSubmit}>
+                
                     <ul>
                         {errors.map((error, idx) => (
                             <li key={idx}>{error}</li>
                         ))}
                     </ul>
                     <div>
-                        <h2>
+                    <form className="addReview" onSubmit={onSubmit}>
+                        <label>
                             Add Review
-                        </h2>
+                        </label>
                         <textarea
                         onChange={e => setReview(e.target.value)}
                         value={review}
@@ -62,11 +64,12 @@ const AddReview = ({sitterId, showModal}) => {
                             <option value='4'>★★★★</option>
                             <option value='5'>★★★★★</option>
                         </select>
-                        <button>Submit</button>
+                        <button disabled={review ? false : true}>Submit</button>
+                        </form>
 
                     </div>
 
-                </form>
+                
             </div>
         )
     

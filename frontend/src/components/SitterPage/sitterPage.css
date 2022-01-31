@@ -1,0 +1,131 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    max-height: 300px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 12px;
+    display: flex;
+    /* position: absolute; */
+    /* bottom: 900px; */
+    /* left: 800px; */
+    /* margin-top: 200px; */
+  }
+
+  .card2 {
+      /* position: absolute; */
+      /* top: 300px; */
+      justify-content: center;
+      align-items: center;
+
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+    /* max-width: 600px; */
+    /* margin: auto; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 600px;
+    /* margin-top: 200px; */
+    font-family: Allerta Stencil;
+    color: black;
+    font-size: 24px;
+  }
+
+
+  .profileimg {
+      /* height: 500px; */
+      margin-left: 100px;
+     width: 600px;
+     height: 400px;
+     padding-right: 150px;
+    /* padding: 20px; */
+    border-radius: 20px;
+    /* float: left;  */
+    
+}
+
+.profile {
+    display: flex;
+    /* width: 1000px; */
+    /* margin-top: 200px; */
+}
+
+
+.sitters13 {
+    align-items: center;
+    /* background-color: gray; */
+    background: url('https://res.cloudinary.com/zaf/image/upload/v1643616634/woofmeow/dog_black_underwater_swimming_water_74417_1400x1050_ecd7if.jpg') repeat center / cover;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    padding: 1rem;
+    position: sticky;
+    width: 100%;
+    /* height: 100%; */
+    /* z-index: -1; */
+  }
+
+
+
+  .about {
+      padding: 25px;
+      font-size: 30px;
+  }
+
+  .name {
+      color: rgb(113, 207, 235);
+
+  }
+
+
+  .aboutme {
+    padding: 20px;
+    font-family: Allerta Stencil;
+    color: whitesmoke;
+    font-size: 40px;
+    text-decoration: none;
+    text-shadow:
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+
+  .firstlast {
+      /* position: absolute; */
+      /* font-size: 40px; */
+      padding: 20px;
+      font-family: Allerta Stencil;
+      color: whitesmoke;
+      font-size: 40px;
+      text-decoration: none;
+      text-shadow:
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+       -1px 1px 0 #000,
+        1px 1px 0 #000;
+  }
+
+  .sitters14 {
+    align-items: center;
+    background-color: aliceblue;;
+    /* background: url('https://res.cloudinary.com/zaf/image/upload/v1643616634/woofmeow/dog_black_underwater_swimming_water_74417_1400x1050_ecd7if.jpg') repeat center / cover; */
+    /* bottom: 0; */
+    display: flex;
+    justify-content: center;
+    /* height: 70vh; */
+    padding: 1rem;
+    /* position: sticky; */
+    width: 100%;
+    /* z-index: -1; */
+  }
+
+  .book {
+      position: absolute;
+      font-size: 40px;
+      opacity: .7;
+  }

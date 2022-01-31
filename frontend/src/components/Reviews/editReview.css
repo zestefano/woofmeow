@@ -1,4 +1,4 @@
-.signup {
+.editReview {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -15,6 +15,13 @@
     border-radius: 10px;
   }
 
-  .label {
-    color: white;
-}
+  label {
+      color: white;
+  }
+
+
+  .deleteReview {
+    display: flex;
+    flex-direction: column;
+
+  }

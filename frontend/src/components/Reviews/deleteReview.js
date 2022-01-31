@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { deleteReview } from "../../store/reviewReducer";
 // import DeleteSitterButton from "../DeleteSitterButton";
+import '../../components/Reviews/editReview.css'
 
 const DeleteReviewButton = ({id, showModal}) => {
     const dispatch = useDispatch()
@@ -11,7 +12,7 @@ const DeleteReviewButton = ({id, showModal}) => {
     }
 
     return (
-        <div>
+        <div className="deleteReview">
             <button
             onClick={() => onSubmit(id)}
             id={id}

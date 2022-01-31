@@ -4,6 +4,7 @@ import { addSitter } from "../../store/sitterReducer";
 import { useParams } from "react-router-dom";
 // import { addPhoto } from "../../store/sitterReducer";
 import { useHistory } from "react-router-dom";
+import '../../components/AddSitterModal/addSitter.css'
 
 
 const BecomeSitter = ({showModal}) => {
@@ -87,7 +88,7 @@ const BecomeSitter = ({showModal}) => {
                     ))
                 }
             </ul>
-            <form onSubmit={onSubmit}>
+            <form className="addSitter" onSubmit={onSubmit}>
                 <label>
                     Do you take care of dogs?
                 </label>

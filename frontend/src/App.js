@@ -8,6 +8,7 @@ import Sitters from "./components/Sitters/sitters";
 import SitterPage from "./components/SitterPage";
 import HomePage from "./components/HomePage/homePage";
 
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -30,7 +31,7 @@ function App() {
             <SitterPage />
           </Route>
           <Route>
-            <HomePage />
+            <HomePage path="/" />
           </Route>
         </Switch>
       )}

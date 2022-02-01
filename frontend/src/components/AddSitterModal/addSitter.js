@@ -11,15 +11,9 @@ const BecomeSitter = ({showModal}) => {
     const dispatch = useDispatch()
     const userId = useSelector((state) => state.session.user?.id)
     const sitter = useSelector((state) => Object.entries(state.sitters))
-    // const {sitterId} = useParams()
-    // console.log(sitter.length - 1, 'LLLLLLLLLLLLLL')
-    // const sitterId = sitter.length + 1
+
     const history = useHistory()
-    // const allSitters = useSelector((state)=> Object.values(state?.sitters))
-    // const sitterId = allSitters[allSitters.length]?.id
-    // console.log(sitterId, "------------")
-    
-    // const sitter = useSelector(state => state?.sitters[sitters.length])
+
 
     const [dog, setDog] = useState(false)
     const [cat, setCat] = useState(false)
@@ -55,16 +49,12 @@ const BecomeSitter = ({showModal}) => {
             url,
             userId
         }
-        // const photo = {
-        //     url,
-        //     sitterId
-        // }
+ 
         await dispatch(addSitter(sitter))
-        // await dispatch(addPhoto(photo))
+
         showModal(false)
-        // setTimeout(() => {
-        //     history.push(`/${sitterId}`)
-        // }, 100)
+        history.push('/sitters')
+ 
         
        }
     }

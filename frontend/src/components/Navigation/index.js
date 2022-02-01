@@ -10,11 +10,11 @@ import SignupFormModal from '../SignupFormPage/signupModal';
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
-  const sessionUser = useSelector(state => state.session.user);
-  const sitterIds = useSelector(state => Object?.values(state?.sitters))
+  const sessionUser = useSelector(state => state?.session?.user);
+  // const sitterIds = useSelector(state => Object?.values(state?.sitters))
 //   console.log(sitterIds?.find(userId => sitterIds[userId] === sessionUser?.id))
-  const userSitters = sitterIds?.map(a => a?.userId)
-// console.log(sessionUser)
+  // const userSitters = sitterIds?.map(a => a?.userId)
+// console.log(userSitters)
 // console.log()
 
 
@@ -23,9 +23,9 @@ function Navigation({ isLoaded }){
     sessionLinks = (
     <div>
       <ProfileButton user={sessionUser} />
-      {!userSitters?.includes(sessionUser?.id) && (
+      {/* {!userSitters?.includes(sessionUser?.id) && (
         <BecomeSitterModal />
-    )}
+    )} */}
     </div>
     );
   } else {

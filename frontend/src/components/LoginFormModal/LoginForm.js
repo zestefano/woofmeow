@@ -56,7 +56,7 @@ function LoginForm() {
      
       <button type="submit">Log In</button>
       <button className='submit' onClick={demo}>Demo User</button>
-      <Link to='https://github.com/zestefano'>github.com/zestefano</Link>
+      <a href='https://github.com/zestefano'>github.com/zestefano</a>
     </form>
   );
 }

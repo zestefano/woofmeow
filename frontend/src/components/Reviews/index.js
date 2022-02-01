@@ -21,6 +21,8 @@ const Reviews = ({userId, sitterId}) => {
     }, [dispatch])
 
 
+
+
     return (
         <div className="userReview">
             <h3>{reviews.length} Reviews</h3>
@@ -33,7 +35,7 @@ const Reviews = ({userId, sitterId}) => {
          
             {reviews?.map(({review, Sitter, User, id, rating}) => (
                 <div className="rev">
-                    <p className="rating">{rating === 5? "★★★★★" : rating === 4? "★★★★" : rating === 3? "★★★" : rating === 2? "★★" : "★"}</p>
+                    <p className="rating">Rating: {rating} stars</p>
                     {User.username} : {review}
                     
                     <div className="edit">

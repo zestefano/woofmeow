@@ -9,7 +9,7 @@ import '../../components/AddSitterModal/addSitter.css'
 
 const BecomeSitter = ({showModal}) => {
     const dispatch = useDispatch()
-    const userId = useSelector((state) => state.session.user?.id)
+    const userId = useSelector((state) => state?.session?.user?.id)
     const sitter = useSelector((state) => Object.entries(state.sitters))
 
     const history = useHistory()

@@ -102,6 +102,7 @@
     flex-direction: row-reverse;
     top: 11px;
     right: 0px;
+    font-size: 20px;
  }
  
  /* .becomeASitter {
@@ -122,4 +123,8 @@
  
  .profileDropdown > ul li {
     border-bottom: 1px solid white;
+ }
+
+ .proButton {
+    width: 40px;
  }

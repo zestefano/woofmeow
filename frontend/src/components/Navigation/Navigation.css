@@ -58,26 +58,7 @@
 
  }
  
- /* .navBarLeft {
-    width: 25%;
- } */
 
- /* .navBarRight {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 25%;
-    flex-direction: column;
- } */
- 
- /* .navBarRight li {
-    padding-right: 5px;
- } */
- 
- 
- /* .navBarRight li > button:hover {
-    background-color: lightgray;
- } */
 
  a {
     /* color: aqua; */

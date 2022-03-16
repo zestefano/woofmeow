@@ -1,10 +1,4 @@
-/* body {
-    margin: 0;
-}
 
-p {
-    margin: 0;
-} */
 
 * {
     box-sizing: border-box;
@@ -33,33 +27,7 @@ p {
       1px 1px 0 #000; 
   }
 
-/* .section1 {
-    align-items: center;
-    height: 100vh;
-    box-sizing: border-box;
-    background: no-repeat center / cover url("https://www.rd.com/wp-content/uploads/2021/03/GettyImages-1133605325-scaled-e1617227898456.jpg");
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    padding: 1rem;
-    position: sticky;
-    width: 100%;
-    z-index: -1;
-}
-.section2 {
-    height: 100vh;
-    box-sizing: border-box;
-    background: no-repeat center / cover url("https://wallpaperaccess.com/full/390975.jpg");
-    z-index: -2;
-}
 
-.section3 {
-    height: 100vh;
-    box-sizing: border-box;
-    background: no-repeat center / cover url("https://wallpaperaccess.com/full/390975.jpg");
-    z-index: -3;
-} */
 
 .section {
     align-items: center;
